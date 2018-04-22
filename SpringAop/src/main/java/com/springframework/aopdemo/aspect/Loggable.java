@@ -1,5 +1,5 @@
 package com.springframework.aopdemo.aspect;
 
-public class LogggingAspect {
+public @interface Loggable {
 
 }
