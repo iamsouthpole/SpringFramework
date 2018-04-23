@@ -15,11 +15,19 @@
 	</bean>
 	
 	<bean name="circle" class="com.springframework.aopdemo.model.Circle">
-		<property name="name" value="Circle name" />
+<!-- 		<property name="name" value="Circle name" /> -->
 	</bean>
 	
 	<bean name="shapeService" class="com.springframework.aopdemo.service.ShapeService" autowire="byName" />
 	
 	<bean name="loggingAspect" class="com.springframework.aopdemo.aspect.LoggingAspect" />
+	
+<!-- 	<aop:config> -->
+<!-- 		<aop:aspect id="loggingAspect" ref="loggingAspect"> -->
+<!-- 			<aop:pointcut expression="execution(* get*())" id="allGetters"/> -->
+<!-- 			<aop:around pointcut-ref="allGetters" method="myAroundAdvice"/> -->
+<!-- 			<aop:around pointcut="execution(* get*())" method="myAroundAdvice"/> -->
+<!-- 		</aop:aspect> -->
+<!-- 	</aop:config> -->
 
 </beans>

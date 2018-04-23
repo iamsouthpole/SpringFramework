@@ -13,6 +13,7 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class LoggingAspect {
 	
+	/*
 	@Before("allCircleGetters()")
 	public void loggingAdvice(JoinPoint joinPoint) {
 //		System.out.println("Advice run. Method " + joinPoint.getTarget() + "called");
@@ -28,6 +29,7 @@ public class LoggingAspect {
 	public void exceptionAdvice(String name, Exception exception) {
 		System.out.println(name + " is throwing an exception. The exception is " + exception);
 	}
+	*/
 	
 	@Around("@annotation(com.springframework.aopdemo.aspect.Loggable)") //("allGetters()")
 	public Object myAroundAdvice(ProceedingJoinPoint pjp) {
@@ -50,7 +52,11 @@ public class LoggingAspect {
 	@Pointcut("execution(* get*())")
 	public void allGetters() {}
 	
-	@Pointcut("within(com.springframework.aopdemo.model.Circle)")
-	public void allCircleGetters() {}
+//	@Pointcut("within(com.springframework.aopdemo.model.Circle)")
+//	public void allCircleGetters() {}
+	
+	public void loggingAdvice() {
+		System.out.println("Loggin from the advice.");
+	}
 
 }
